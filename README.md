@@ -1,5 +1,6 @@
--> Códigos Relacionados a Faculdade <-
+# Códigos Relacionados a Faculdade 
+### Gabriel Candelária Wiltgen Barbosa 
+* **UTFPR - Engenharia de Computação**
 
--> UTFPR - Engenharia de Computação <-
+* **email: gabrielcandelaria@alunos.utfpr.edu.br**
 
--> Gabriel Candelária Wiltgen Barbosa <-
