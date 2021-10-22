@@ -54,7 +54,7 @@ void iniciaPilhaEstatica(PilhaEstatica *pilha){
 //-----------------------------------------------------------------------------------------------------------
 //2 -> está Vazia--------------------------------------------------------------------------------------------
 
-bool estaVaziaPilhaEstatica(PilhaEstatica *pilha) {
+bool estaVaziaPilhaEstatica(PilhaEstatica *pilha){
   return(pilha->topo == 0);
 }//estaVaziaPilhaEstatica
 
@@ -70,7 +70,7 @@ bool estaCheiaPilhaEstatica(PilhaEstatica *pilha){
 
 void empilhaPilhaEstatica(PilhaEstatica *pilha, int x){
   //se a pilha não estiver cheia:
-  if(!estaCheiaPilhaEstatica(pilha)) {
+  if(!estaCheiaPilhaEstatica(pilha)){
     //atribui o "x" no vetor na posição do topo
     pilha->vetor[pilha->topo] = x;
     //incrementa o topo (topo++)
@@ -85,11 +85,11 @@ void empilhaPilhaEstatica(PilhaEstatica *pilha, int x){
 //-----------------------------------------------------------------------------------------------------------
 //5 -> remoção (pop / desempilha)----------------------------------------------------------------------------
 
-void desempilhaPilhaEstatica(PilhaEstatica *pilha) {
+void desempilhaPilhaEstatica(PilhaEstatica *pilha){
   //inicializa uma variável auxiliar:
   int x = 0;
   //se a pilha não estiver vazia:
-  if(!estaVaziaPilhaEstatica(pilha)) {
+  if(!estaVaziaPilhaEstatica(pilha)){
     //atribui a "x" o último valor válido da pilha
     x = pilha->vetor[pilha->topo-1];
     //decrementa topo
@@ -103,24 +103,24 @@ void desempilhaPilhaEstatica(PilhaEstatica *pilha) {
 //-----------------------------------------------------------------------------------------------------------
 //6 -> pesquisa/consulta (topo / top) - mostra o topo--------------------------------------------------------
 
-int topoPilhaEstatica(PilhaEstatica *pilha) {
+int topoPilhaEstatica(PilhaEstatica *pilha){
   return(pilha->vetor[pilha->topo-1]);
 }//topoPilhaEstatica
 
 //-----------------------------------------------------------------------------------------------------------
 //7 -> quantidade de elementos na estrutura------------------------------------------------------------------
 
-int tamanhoPilhaEstatica(PilhaEstatica *pilha) {
+int tamanhoPilhaEstatica(PilhaEstatica *pilha){
   return(pilha->topo);
 }//tamanhoPilhaEstatica
 
 //-----------------------------------------------------------------------------------------------------------
 //8 -> imprimir estrutura (print)----------------------------------------------------------------------------
 
-void imprimePilhaEstatica(PilhaEstatica *pilha) {
+void imprimePilhaEstatica(PilhaEstatica *pilha){
   //pilha->vetor, pilha->topo
   printf("Pilha = {");
-  for(int i = 0; i < tamanhoPilhaEstatica(pilha); i++) {
+  for(int i = 0; i < tamanhoPilhaEstatica(pilha); i++){
     printf("%d", pilha->vetor[i]);
     if(i != tamanhoPilhaEstatica(pilha)-1){
       printf(" ");
