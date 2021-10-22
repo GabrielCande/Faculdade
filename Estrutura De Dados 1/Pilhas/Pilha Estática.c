@@ -79,7 +79,7 @@ void empilhaPilhaEstatica(PilhaEstatica *pilha, int x){
   }else{
     //Informa que não pode mais inserir
     printf("Não cabe mais nada parceiro\n");
-  }
+  }//else
 }//empilhaPilhaEstatica
 
 //-----------------------------------------------------------------------------------------------------------
@@ -97,7 +97,7 @@ void desempilhaPilhaEstatica(PilhaEstatica *pilha) {
   }else{
     //Informa que não pode mais retirar
     printf("Não da pra tirar mais nada parceiro\n");
-  }
+  }//else
 }//desempilhaPilhaEstatica
 
 //-----------------------------------------------------------------------------------------------------------
@@ -203,7 +203,7 @@ int main(int argc, char const *argv[]){
   for(int i = 0; i <= MAXTAM; i++){
     desempilhaPilhaEstatica(&p);
     imprimePilhaEstatica(&p);
-  }
+  }//for
 
   return 0;
 
