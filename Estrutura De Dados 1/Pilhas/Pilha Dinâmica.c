@@ -71,9 +71,10 @@ void empilhaPilhaDinamica(PilhaDinamica *pilha, int x){
 
 //-----------------------------------------------------------------------------------------------------------
 //5 -> remoção (pop / desempilha)----------------------------------------------------------------------------
-void desempilhaPilhaDinamica(PilhaDinamica *pilha, int* x){
+void desempilhaPilhaDinamica(PilhaDinamica *pilha){
+  int x = 0;
   if(!estaVaziaPilhaDinamica(pilha)){
-    *x = pilha->topo->chave;
+    x = pilha->topo->chave;
     PtrNoPilha aux = pilha->topo;
     pilha->topo = pilha->topo->proximo;
     free(aux);
@@ -118,7 +119,7 @@ void destroiPilhaDinamicaV2(PilhaDinamica *pilha){
   printf("Destruindo pilha!\n");
   int aux;
   while(!estaVaziaPilhaDinamica(pilha)){
-      desempilhaPilhaDinamica(pilha, &aux);
+      desempilhaPilhaDinamica(pilha);
   }//while
 }//destroiPilhaDinamicaV2
 
