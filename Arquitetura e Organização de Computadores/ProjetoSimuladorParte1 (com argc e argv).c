@@ -75,8 +75,8 @@ int main(int argc, char const *argv[]) {
   immediate = (ic & 0xffff);
   //Declaração de variáveis auxiliares
   int auxTemp, auxFont;
-  //Verificando casos em função de opcode
-  switch(opcode){
+    //Verificando casos em função de opcode
+    switch(opcode){
      	//Caso opcode possua o valor 0x00
 	case 0x00:
         //Exibe as informações da cada variável
