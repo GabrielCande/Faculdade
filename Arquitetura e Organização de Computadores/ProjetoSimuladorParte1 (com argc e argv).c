@@ -110,10 +110,10 @@ int main(int argc, char const *argv[]) {
             //R[regTemp] recebe o valor retornado da função pegaValor
             R[regTemp] = pegaValor();
             //Subtrai o valor de R[regFont] e R[regTemp] e salva em R[regDest]
-						R[regDest] = R[regFont] - R[regTemp];
+	    R[regDest] = R[regFont] - R[regTemp];
             //Exibe o valor de R[regDest]
-						printf("A subtração dos registradores resultou em %d\n\n", R[regDest]);
-					break;
+	    printf("A subtração dos registradores resultou em %d\n\n", R[regDest]);
+	  break;
           //--------------------------------- MULT --------------------------------------
           //Caso funct possua o valor 0x18
           case 0x18:
@@ -323,7 +323,7 @@ int main(int argc, char const *argv[]) {
         //Exibe o valor de R[regTemp]
         printf("A operação lógica XORI entre o operador e o imediato resultou em %d\n", R[regTemp]);
       break;
-		}//switch
+    }//switch
   }//for
 //Retorna 0 como valor da função
 return 0;
