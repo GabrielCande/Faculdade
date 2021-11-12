@@ -56,37 +56,37 @@ int main(int argc, char const *argv[]) {
   //Declara uma variável que receberá a instrução do arquivo
   uint32_t instruct;
   //Looping para percorrer cada informação lida do arquivo
-	for(int i = 0; i < resultado; i++){
-    //A variável pc recebe o valor de i
-		pc = i;
-    //A variável ic recebe a informação contida na posição pc do vetor ram
-		ic = (uint32_t)ram[pc];
-    //A variável instruct
-		instruct = ((ic & 0xFF000000) >> 24 | (ic & 0x00FF0000) >> 8 | (ic & 0x0000FF00) << 8 |  (ic & 0x000000FF) << 24 );
-    //A variável ic recebe instruct
-		ic = instruct;
-    //Cada variável recebe uma parte da informação
-		opcode = (ic & 0xFC000000) >> 26;
-		regFont = (ic & 0x3E00000) >> 21;
-		regTemp = (ic & 0x1F0000) >> 16;
-		regDest = (ic & 0xF800) >> 11;
-		shamt = (ic & 0x7C0) >> 6;
-		funct = (ic & 0x3F);
-    immediate = (ic & 0xffff);
-    //Declaração de variáveis auxiliares
-    int auxTemp, auxFont;
-    //Verificando casos em função de opcode
-		switch(opcode){
-      //Caso opcode possua o valor 0x00
-			case 0x00:
+  for(int i = 0; i < resultado; i++){
+  //A variável pc recebe o valor de i
+  pc = i;
+  //A variável ic recebe a informação contida na posição pc do vetor ram
+  ic = (uint32_t)ram[pc];
+  //A variável instruct
+  instruct = ((ic & 0xFF000000) >> 24 | (ic & 0x00FF0000) >> 8 | (ic & 0x0000FF00) << 8 |  (ic & 0x000000FF) << 24 );
+  //A variável ic recebe instruct
+  ic = instruct;
+  //Cada variável recebe uma parte da informação
+  opcode = (ic & 0xFC000000) >> 26;
+  regFont = (ic & 0x3E00000) >> 21;
+  regTemp = (ic & 0x1F0000) >> 16;
+  regDest = (ic & 0xF800) >> 11;
+  shamt = (ic & 0x7C0) >> 6;
+  funct = (ic & 0x3F);
+  immediate = (ic & 0xffff);
+  //Declaração de variáveis auxiliares
+  int auxTemp, auxFont;
+  //Verificando casos em função de opcode
+  switch(opcode){
+     	//Caso opcode possua o valor 0x00
+	case 0x00:
         //Exibe as informações da cada variável
         printf("\n opcode %01x | regFont %01x | regTemp %01x | regDest %01x | shamt %01x | funct %01x\n\n",
         opcode, regFont, regTemp, regDest, shamt, funct);
         //Verificando casos em função de funct
-			  switch(funct){
+	switch(funct){
           //--------------------------------- ADD ---------------------------------------
           //Caso funct possua o valor 0x20
-					case 0x20:
+	  case 0x20:
             printf("--------Adição-------\n");
             printf("\n----Primeiro Valor---\n");
             //R[regFont] recebe o valor retornado da função pegaValor
@@ -95,13 +95,13 @@ int main(int argc, char const *argv[]) {
             //R[regTemp] recebe o valor retornado da função pegaValor
             R[regTemp] = pegaValor();
             //Soma o valor de R[regFont] e R[regTemp] e salva em R[regDest]
-						R[regDest] = R[regFont] + R[regTemp];
+	    R[regDest] = R[regFont] + R[regTemp];
             //Exibe o valor de R[regDest]
-						printf("A soma dos registradores resultou em %d\n\n", R[regDest]);
-					break;
+	    printf("A soma dos registradores resultou em %d\n\n", R[regDest]);
+	  break;
           //--------------------------------- SUB ---------------------------------------
           //Caso funct possua o valor 0x22
-					case 0x22:
+	  case 0x22:
             printf("------Subtração------\n");
             printf("\n----Primeiro Valor---\n");
             //R[regFont] recebe o valor retornado da função pegaValor
@@ -265,7 +265,7 @@ int main(int argc, char const *argv[]) {
             //Exibe o valor de R[regDest]
             printf("A operação aritmética SRA do registrador temporário resultou em %d\n\n", R[regDest]);
           break;
-				}//switch
+	}//switch
       break;
       //--------------------------------- ADDI --------------------------------------
       //Caso opcode possua o valor 0x08
