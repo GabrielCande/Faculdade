@@ -47,13 +47,13 @@ void consumer(){
 void main(){
   key = ftok("/home", 'A');                      //  Segmento
   shmid = shmget(key, 1024, 0644 | IPC_CREAT);   //
-  data = (malloc(5*sizeof(char)));               //     1
+  data = (malloc(REP*sizeof(char)));               //     1
   data = shmat(shmid, (void *)0, 0);             //
 
   //Peterson
   key = ftok("/home/downloads", 'B');            //  Segmento
   flagsid = shmget(key, 1024, 0644 | IPC_CREAT); //
-  flags = (malloc(1*sizeof(int)));               //     2
+  flags = (malloc(4*sizeof(int)));               //     2
   flags = shmat(flagsid, (void *)0, 0);          //
 
 
