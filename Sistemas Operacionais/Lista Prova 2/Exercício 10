@@ -1,0 +1,5 @@
+Primeiramente deve-se criar um trecho de memória compartilhada, utilizando a função smhget e salvando seu identificador em uma variável global (smhid):
+smhid = smhget(key, size, smhflg);
+Em seguida, a memória compartilhada deve ser vinculada ao processo, alocando um buffer global e vinculando a memória compartilhada a ele utlizando a função smhat:
+data = (malloc(int *sizeof(char)));
+data = smhat(shmid, (void *)0, 0);
