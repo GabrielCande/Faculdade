@@ -1,0 +1,2 @@
+PIPEs são canais de comunicação unidirecionais entre dois processos relacionados, nos quais um dos processos escreve enquanto o outro lê o que está escrito no PIPE 
+utilizado para a comunicação entre eles, sendo possível atribuir mais de um PIPE aos mesmos processos.
