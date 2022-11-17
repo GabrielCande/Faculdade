@@ -1,0 +1,2 @@
+  As threads de núcleo conseguem explorar muito melhor o paralelismo e as caracteristicas do hardware, não bloqueam processos caso apenas uma thread seja bloqueada
+e liberam os processos de fazer gerenciamento de thread, contudo, as threads de núcleo são mais lentas e exigem o system call no chaveamento.
