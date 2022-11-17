@@ -1,0 +1,2 @@
+Resolveria fazendo com que os processos se tornem capazes de se comunicar entre eles, utilizando o PIPE para essa questão, uma vez que o código é simples e possui baixa
+margem de erro, caso contrário seria mais interesante o uso da memória comprtilhada para evitar descontinuidade no código quando executando por muito tempo.
