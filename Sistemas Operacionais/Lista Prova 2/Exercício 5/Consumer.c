@@ -15,8 +15,8 @@ const int REP = 5;
 char dado;
 key_t key;
 int shmid,counterid;
-char data;
-intcounter;
+char *data;
+int *counter;
 int in;
 pthread_mutex_t mut;
 
@@ -50,14 +50,14 @@ int main(){
 
   key = ftok("/home", 'A');                      //  Segmento
   shmid = shmget(key, 1024, 0644 | IPC_CREAT);   //
-  data = (malloc(5sizeof(char)));               //     1
-  data = shmat(shmid, (void)0, 0);             //
+  data = (malloc(5*sizeof(char)));               //     1
+  data = shmat(shmid, (void *)0, 0);             //
 
   //Peterson
   key = ftok("/home/downloads", 'B');            //  Segmento
   counterid = shmget(key, 1024, 0644 | IPC_CREAT); //
-  counter = (malloc(1sizeof(int)));               //     2
-  counter = shmat(counterid, (void)0, 0);          //
+  counter = (malloc(1*sizeof(int)));               //     2
+  counter = shmat(counterid, (void *)0, 0);          //
   counter[0] = 0;
 
   signal(SIGINT, exit);
