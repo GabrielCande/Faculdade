@@ -1,0 +1,9 @@
+a) Mutex são "travas", com objetivo de bloquear a região críica do código, para serem implementados precisam do suporte de hardware para demonstrar que uma área está
+bloqueada.
+
+b) Semaforos são os mesmos que Mutex, "travas" com objetivo de bloquear a região crítica do código, implementados com suporte de hardware capaz de demonstrar uma área
+bloqueada.
+
+c) Mutex apresentam apenas 2 estados, bloqueado e desbloqueado, assim como o Semaforo Binário (1 ou 0). Porém, embora tenham o mesmo efeito prático a implementação deles é diferentes, sendo assim, não são a mesma coisa.
+
+d) Outra alternativa para sincronização de processos seria a desabilitação de interrupções.
