@@ -1,0 +1,2 @@
+  As thread de usuário realizam o chaveamento de contexto de maneira muit0o mais rápida que as threads de núcleo, contudo, bloqueam processos quando são bloqueadas e
+não conseguem explorar muito bem as caracteristicas do hardware.
