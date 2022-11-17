@@ -1,4 +1,5 @@
   Deadlocks consiste em uma situação na qual duas thread bloqueam duas variáveis distintas ao mesmo tempo e em sequencia tentam bloquear a variável que o outro thread
 já esta bloqueando, gerando um impasse no código, impedindo sua execução. O tratamento desse problema não compensa computacionalmente, uma vez que essa situação ocorre
 em uma quantia ínfima de vezes em códigos no geral, sendo assim, gastar linhas de código com soluções preventivas para algo que possui uma chance baixa de ocorrer é
-considerado desperdício de memória.
+considerado desperdício de memória. Desta forma, para solucionar um deadlock é mais viável se focar em apenas solucionar uma das condições necessárias para a existência
+do deadlock em questão, ou seja, solucionar a exclusão mútua, a posse e espera, a não preempção ou a espera circular.
